@@ -2,9 +2,9 @@
 
 :root {
     /* Colors from the website color scheme */
-    --sweet-pink: #f4c2c2;      
-    --shocking-orange: #d35400; 
-    --cream-bg: #fdfbf7;        
+    --sweet-pink: #ffb6c1;      
+    --shocking-orange: #ff6b00; 
+    --cream-bg: white;        
     --dark-text: #333333;       
     --light-text: #ffffff;
     
@@ -35,23 +35,44 @@ h1, h2, h3 {
     color: var(--shocking-orange);
     margin-bottom: 1rem;
     text-align: center;
+    text-shadow: 1px 1px 2px rgba(255,107,0,0.1); /* for a bright shadow */
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; margin-top: 2rem; }
-h3 { font-size: 1.5rem; color: var(--dark-text); }
-p { margin-bottom: 1rem; text-align: center; }
+h1 { 
+    font-size: 2.5rem; 
+}
+h2 { 
+    font-size: 2rem;
+     margin-top: 2rem; 
+    border-bottom: 3px solid var(--sweet-pink); padding-bottom: 0.5rem;
+    display: inline-block;
+    width: 100%;
+}
+h3 { 
+    font-size: 1.5rem;
+     color: var(--dark-text); 
+    background-color:rgba(255,182,193,0.3); /* subtle pink background */
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255,107,0,0.1); /* subtle orange shadow */
+}
+p {
+     margin-bottom: 1rem; 
+     text-align: center; 
+}
 
 /* header and navigation */
 header {
-    background-color: var(--light-text);
+    background-color: var(--sweet-pink);
     padding: 1.5rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(255,182,193,0.05);
+    border-bottom: 4px solid var(--shocking-orange); /* orange border */
 }
 
 header h1 {
-    color: var(--shocking-orange);
+    color: var(--light-text );
     margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(255,107,0,0.2); /* subtle orange shadow */
 }
 
 nav ul {
@@ -65,16 +86,18 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--dark-text);
+    color: var(--light-text);
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.85rem;  /* allows the user to see more of the navigation items on smaller screens */
+    letter-spacing: 1px; /* adds a bit of spacing between letters for better readability */
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--shocking-orange);
+    color: var(--dark-text);
+    text-decoration: underline;
+    transform: scale(1.1);
 }
 
 /* Main Content */
@@ -87,11 +110,12 @@ main {
 }
 
 section {
-    background-color: var(--light-text);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Soft shadow */
+    background-color: rgba(255,182,193,0.15); /* subtle pink background */
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+    border: 2px solid var(--sweet-pink); /* pink border */
+    box-shadow: 0 4px 15px rgba(255,182,193,0.02); /* Soft shadow */
 }
 
 /* Images and Frames */
@@ -110,13 +134,30 @@ section {
     width: auto;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(255,107,0,0.15); /* subtle orange glow */
     border: 4px solid var(--sweet-pink); /* pink frame */
     transition: transform 0.3s ease;
 }
 
 .image.row img:hover {
-    transform: scale(1.03); /* Slight zoom on hover */
+    transform: scale(1.05) translate(-5px); /* Slight zoom on hover */
+}
+
+body>img[src*="cover_cake"] {
+    display:block;
+    max-width: 90%;
+    height: 400px;
+    object-fit: cover;
+    margin: 2rem auto 3rem auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255,107,0,0.2); /* subtle orange glow */
+    border: 6px solid var(--sweet-pink); /* pink frame */
+    transition: transform 0.3s ease; /* Slight zoom on hover */
+
+}
+
+body>img[src*="cover_cake"]:hover {
+    transform: scale(1.05)
 }
 
 /* General images (like the single welcome image) */
@@ -126,7 +167,7 @@ section > img {
     height: auto;
     margin: 0 auto 1.5rem auto;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(255,107,0,0.15); /* subtle orange glow */
     border: 4px solid var(--sweet-pink);
 }
 
@@ -153,19 +194,20 @@ input[type="date"],
 select,
 textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem;
     margin-bottom: 1.5rem;
-    border: 2px solid #eee;
-    border-radius: 8px;
+    border: 2px solid var(--sweet-pink);
+    border-radius: 10px;
     font-family: var(--font-body);
     font-size: 1rem;
-    background-color: var(--cream-bg);
-    transition: border-color 0.3s ease;
+    background-color: #fffafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--shocking-orange);
+    box-shadow: 0 0 5px rgba(255,107,0,0.3); /* subtle orange glow on focus */
 }
 
 /* Buttons */
@@ -183,11 +225,13 @@ button, .btn {
     margin-top: 1rem;
     text-decoration: none;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(255,107,0,0.4); /* subtle orange glow */
 }
 
 button:hover, .btn:hover {
     background-color: #b84600;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,107,0,0.5); /* stronger glow on hover */
 }
 
 /* footer */
@@ -197,6 +241,7 @@ footer {
     text-align: center;
     margin-top: auto;
     border-radius: 20px 20px 0 0;
+    border-top: 6px solid var(--shocking-orange); /* subtle orange border on top */
 }
 
 footer h2 {
@@ -250,4 +295,36 @@ footer a:hover {
     section {
         padding: 1.5rem;
     }
+}
+
+/* Social Media icons*/
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;   /* Space between icons */
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--sweet-pink); /* Soft pink background */
+    color: var(--shocking-orange);       /* Orange icon color */
+    border-radius: 50%;                
+    text-decoration: none;
+    font-size: 1.5rem;                   /* Size of the icon */
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* What will happen when you hover over the icon */
+.social-links a:hover {
+    background-color: var(--shocking-orange);
+    color: var(--light-text);            /* White icon on hover */
+    transform: translateY(-5px);         /* Icon moves up slightly */
+    box-shadow: 0 5px 15px rgba(211, 84, 0, 0.4); /* Orange glow */
 }
