@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boledi's cakes & decor - Order Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Order your goods</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="orderonline.html">Order Online</a></li>
+                <li><a href="specialsandpromotions.html">Specials & Promotions</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="image row">
+        <image src="images/homecoming1.png">
+        <image src="images/wedcake5.png">
+            <image src="images/kidgrad2.png">
+            <image src="images/spiderman.png">
+        <image src="images/wedcake2.png">
+        <image src="images/wedcake3.png">
+        </div>
+
+    <main>
+        <h2>Order Online</h2>
+
+        <!-- Each section reflects one step of the ordering process from the sitemap -->
+        <section>
+            <h3>Choose product/service</h3>
+            <label for="subject">Type of service/products:</label><br>
+            <select id="subject" name="subject">
+                <option value="birthday">Birthday cake</option>
+                <option value="wedding">Wedding cake</option>
+                <option value="anniversary">Anniversary cake</option>
+                <option value="babyshower">Baby shower cake</option>
+                <option value="occasion">Special Occasion cake</option>
+                <option value="catering">Catering</option>
+                <option value="decor">Decor Services</option>
+                <option value="Sweetpastries">sweet Pastries</option>
+            </select><br><br>
+
+        </section>
+
+        <!--This section is for customers to customise their order through the selection of various options-->
+        <section>
+            <h3>Customise Order</h3>
+            <label for="customisation">Customise your order to your liking:</label><br>
+            <select id="customisation" name="customisation">
+                <option value="flavour">Flavour</option>
+                <option value="size">Size</option>
+                <option value="design">Design</option>
+                <option value="colour">Colour</option>
+            </select><br><br>
+        </section>
+
+        <section>
+            <h3>Add to Cart</h3>
+            <p>Almost there!</p>
+        </section>
+
+        <section>
+            <h3>Choose Collection / Delivery</h3>
+            <!--Customer can be able to select their preferred method of collection or delivery and their dates with this html5 date input-->
+            <p> Collection / Delivery</p>
+
+            <form>
+
+                <label for="collection">set your date:</label><br>
+                <input type="date" id="collection" name="collection/delivery date" required><br><br>
+                
+                <!--these are radio buttons to choose whether they want collection or delivery-->
+                <lable> Collection or delivery</lable><br>
+                <input type="radio" id="collection" name="method" value="collection" checked>
+                <label for="collection">Collection</label><br>
+                <input type="radio" id="delivery" name="method" value="delivery">
+                <label for="delivery">Delivery</label><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <!--this section is to handle payment options-->
+        <section>
+            <h3>Payment</h3>
+            <p>Choose your preferred payment method</p>
+            <form>
+                <label for="payment">Payment Method:</label><br>
+                <select id="payment" name="payment">
+                    <option value="creditcard">Credit Card</option>
+                    <option value="debitcard">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="eft">EFT</option>
+                </select><br><br>
+
+                <!--these are radio buttons to choose whether they want collection or delivery-->
+                <lable> Payment method</lable><br>
+                <input type="radio" id="creditcard" name="method" value="creditcard" checked>
+                <label for="creditcard">Credit Card</label><br>
+                <input type="radio" id="debitcard" name="method" value="debitcard">
+                <label for="debitcard">Debit Card</label><br><br>
+
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+
+        <!--this section is for order confirmation-->
+        <section>
+            <h3>Order Confirmation</h3>
+            <button type="submit">Confirm Order</button>
+            <p>Once your order has been confirmed, you will receive an email confirmation with your order details and estimated delivery/collection time.</p>
+        </section>
+
+         <!--this section is for order tracking-->
+        <section>
+            <h3>Track Order</h3>
+            <p>You can now track the progress of your order</p>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Thank you for choosing us</h2>
+        <p><a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <div class="image row">
+        <image src="images/pjmasks.png">
+        <image src="images/kidgrad1.png">
+            <image src="images/kidgrad2.png">
+            <image src="images/spiderman.png">
+        <image src="images/mickycake.png">
+        <image src="images/wedcake3.png">
+        </div>
+
+</body>
+</html>
