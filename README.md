@@ -24,6 +24,15 @@ Website Pages:
 - contact.html (Contact): Provides essential business information including phone numbers, email addresses, physical locations, operating hours
   and direct links to social media.
 
+Markin(2025) encourages that Project objectives and goals for a website should be
+
+- To increase website traffic and visibility by using SEO to improve visibility and making the website appear when users search relevant keywords.
+- To make business information like contact details, operating information, location and price lists and  images of the bakery's products and services available to all customers.
+- Creating a responsive layout in order for the website to adapt to different screen sizes.
+- Making forms available to customers that want to submit enquiries.
+- To enhance user experience by always having consistent branding, simple navigation, styling, reducing load times and ensuring responsiveness.
+- Generating leads and boosting conversions to convert visitors to customers by having persuasive calls to action and forms designed to gather contact information.
+
 HTML Code Structure:
 
 The HTML code follows a semantic layout, utilizing tags like <header>, <nav>, <main>, <section>, and <footer> to organize content correctly.
@@ -58,9 +67,66 @@ Key Styling Features:
 - Social Media Icons: Integrated using Font Awesome, styled as circular pink buttons that turn orange when hovered over.
 - Form Styling: Input fields have pink borders that glow orange when clicked, providing clear visual feedback to the user.
 
+Website features and functionality
+
+- Navigation
+  There is a consistent navigation structure that connects the different website pages. it allows visitors to move between all website pages.
+- Responsive Design
+  Responsiveness of the application must be tested on desktop and mobile screen widths to confirm that navigation, images, text and forms remain usable. Jamal | Website strategy states " having a responsive and mobile friendly design is not optional anymore. It is essential if you want to keep your visitors and convert them into customers..." (5 Must-Have Website Features for Small Businesses,2025).
+- Product and Service Presentation
+  The products and services pages organise information so that customers can explore the bakery's offerings. Images support the presentation of products and help visitors understand what the business offers.
+- Contact Information
+  The contact page provides a dedicated location for business contact details and other relevant customer information.
+-Ordering and Enquiry Forms
+The ordering and enquiry pages provide form interfaces for collecting relevant customer information. HTML form elements include text fields, selection controls and text areas, depending on the information required.
+- Mobile 
+
+Installation and setup
+How to access and run Boledi's cakes & decor website:
+1. Open the project repository on GitHub.
+2. Download the project as a ZIP file or clone the repository using Git.
+3. Extract the downloaded files if necessary.
+4. Open the project folder in Visual Studio Code.
+5. Confirm that the HTML files, CSS folder and image assets are present.
+6. Open "index.html" in a web browser to view the homepage.
+7. Navigate through the website and test the available links and form controls.
+
+Current Limitations
+
+- The website does not have a backend for storing or processing customer orders.
+- Enquiry submissions may require additional configuration to reach the business.
+- Customer order tracking is not available unless a suitable tracking system has been implemented.
+- Product availability and pricing may require a process for keeping information updated.
+- An HTML form does not automatically submit, store or process an order. Actual submission and order management depend on the form configuration and any supporting backend or external service implemented
+
+
+
 Future Improvements:
 
 To take the website to the next level, future updates could include:
 
 - Adding a backend database to process the order.html and enquiry.html forms.
 - Adding a customer reviews or testimonials section.
+
+Technologies used
+
+HTML - To structure the website's content, headings, links, images, forms.
+CSS - To handle the layouts, colors, typography, spacing, hover effects and responsive styling. 
+Visual Studio code - Used to create the website application and manage the website's source files.
+Git and Github - Used to track changes and storing the project repository online.
+
+Testing and quality assurance
+Page loading: All HTML pages open without errors. Completed
+Navigation: Links users to the correct pages. Completed
+Images: Images load and have appropriate dimensions. To be completed
+Styling: Colors, fonts and layouts display correctly. Completed
+Responsive layout: Content remains usable on desktop and mobile widths. To be completed
+Forms: Fields accept appropriate input and validation works where implemented. To be completed
+Ordering: The ordering interface behaves as intended.| To be completed
+Contact information: Displayed details are correct and up to date. Completed
+
+
+
+  Reference list
+Markin, I., 2025. Defining Website Goals and objectives.gapsy,[blog] 22 May. Available at < https://gapsystudio.com/blog/defining-website-goals-and-objectives/ > [Accessed 20 October 2026].
+Jamal | Website Strategy, 2025. 5 Must have website features for small businesses.[video online] Available at: < https://www.youtube.com/watch?v=miLZ76HMMc0 > [Accessed 20 october 2026]
