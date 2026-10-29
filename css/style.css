@@ -328,3 +328,140 @@ footer a:hover {
     transform: translateY(-5px);         /* Icon moves up slightly */
     box-shadow: 0 5px 15px rgba(211, 84, 0, 0.4); /* Orange glow */
 }
+
+/* Interactive elements styling */
+
+/* ---Carousel --- */
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden; /* Hides the slides that are off-screen */
+    border-radius: 15px;
+    border: 5px solid var(--sweet-pink);
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each slide takes up 100% of the container */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--shocking-orange);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+    z-index: 10;
+    margin-top: 0; /* Ensures the button is vertically centered */
+}
+
+.carousel-btn:hover {
+    background-color: var(--dark-text);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+
+/* --- accordion --- */
+.accordion-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    background-color: #fffafa;
+    border: 2px solid var(--sweet-pink);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    background-color: rgba(255, 182, 193, 0.2);
+    color: var(--dark-text);
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 182, 193, 0.5);
+    transform: none; /* removes the button hover jump */
+}
+
+.accordion-header i {
+    color: var(--shocking-orange);
+    transition: transform 0.3s ease;
+}
+
+/* This class is added by jQuery when open */
+.accordion-header.active i {
+    transform: rotate(45deg); /* Turns the plus into an X */
+}
+
+.accordion-content {
+    padding: 0 1.2rem;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: white;
+}
+
+.accordion-content p {
+    padding: 1rem 0;
+    text-align: left;
+    margin: 0;
+}
+
+
+/* --- Scroll animation --- */
+/* This class is applied to elements we want to animate */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* jQuery */
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .carousel-slide img { height: 250px; }
+}

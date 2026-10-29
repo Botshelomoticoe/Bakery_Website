@@ -7,6 +7,7 @@
     <link  href="https://fonts.googleapis.com/css2?family=Playfair + Display:wght@700&family
 =Poppins:wght@300;400;600&display = swap"
 rel = "stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel = "stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,14 +28,23 @@ rel = "stylesheet">
         </nav>
     </header>
 
-    <div class="image row">
-        <img src="images/homecoming_cake.png">
-        <img src="images/minimalistic_cake.png">
-        <img src="images/kids_cake.png">
-        <img src="images/spiderman.png">
-        <img src="images/pedi_cake.png">
-        <img src="images/pink_weddingcake (2).png">
-        </div>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="images/homecoming_cake.png" alt="home coming cake">
+                </div>
+                <div class="carousel-slide"><img src="images/minimalistic_cake.png" alt="minimalistic cake">
+                </div>
+                <div class="carousel-slide"><img src="images/kids_cake.png" alt="kids cake">
+                </div>
+                <div class="carousel-slide"><img src="images/spiderman.png" alt="Spiderman Cake">
+                </div>
+                <div class="carousel-slide"><img src="images/pedi_cake.png" alt ="pedi cake">
+                </div>
+                <div class="carousel-slide"><img src="images/pink_weddingcake (2).png" alt="pink wedding cake"> 
+                </div>
+
+            </div>
+            </div>
 
     <main>
         <h2>Order Online</h2>
@@ -58,6 +68,7 @@ rel = "stylesheet">
 
         <!--This section is for customers to customise their order through the selection of various options-->
         <!--add a text input field for customers to enter their customisation details-->
+        <section>
             <h3>Customise Order</h3>
             <label for="customisation">Customise your order to your liking:</label><br>
             <select id="customisation" name="customisation">
@@ -141,6 +152,48 @@ rel = "stylesheet">
         <img src="images/pink_weddingcake.png">
         <img src="images/whiteflower_weddingcake.png">
         </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Carousel logic 
 
+        let currentindex=0;
+        const slides=$('.carousel-slide');
+        const totalSlides=slides.length;
+
+        function updateCarousel(){
+        $('.carousel-track').css('transform', `translateX(-${currentindex *100}%)`);
+        }
+        $('.next').click(function(){
+            currentindex=(currentindex +1)% totalSlides;
+                updateCarousel();
+    });
+    $('.prev').click(function(){
+        currentindex=(currentindex -1 + totalSlides)% totalSlides;
+        updateCarousel();
+        });
+
+        /* automatic slide every 4 seconds */
+        setInterval(function(){
+            currentindex=(currentindex +1)% totalSlides;
+            updateCarousel();
+        },4000);
+
+        /* Scroll animation logic */
+        $('section').addClass('scroll-reveal');
+        function checkScroll(){
+            let windowheight=$(window).height();
+            let scrolltop=$(window).scrollTop();
+            $('.scroll-reveal').each(function(){
+                let elementOffset=$(this).offset().top;
+                if(elementOffset<(scrolltop + windowheight - 100)){
+                    $(this).addClass('active');
+                }
+            });
+        }
+        $(window).on('scroll',checkScroll);
+        checkScroll(); // Initial check in case some elements are already in view
+    });
+</script>
 </body>
 </html>
