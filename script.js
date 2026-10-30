@@ -81,6 +81,89 @@ $(document).ready(function() {
         marker.bindPopup("<b>Boledi's Cakes & Decor</b><br>Jane Furse, Hospital Area.<br>Come taste the sweetness!").openPopup();
     }
 
+    /* Dynamic service and live search */
+
+// services in an array 
+const serviceData = [
+    {
+        title: "Wedding & Event Catering",
+        description: "Full catering services for weddings, birthdays, and corporate events. Includes main meals, sides, and desserts.",
+        price: "Prices range from R500 - R5000",
+        image: "images/catering.png",
+        keywords: "catering food event wedding catering services"
+    },
+    {
+        title: "Event Decor & Styling",
+        description: "Beautiful decor setups including balloon arches, table styling, draping, and custom centerpieces.",
+        price: "Prices range from R2000 - R10000",
+        image: "images/blue_decor.png", 
+        keywords: "decor decorations event styling balloons setup"
+    },
+    {
+        title: "Kiddies decor & party packages",
+        description: "Fun and colorful party packages for children's birthdays, including themed decor, tableware, and activities.",
+        price: "Prices range from R2000 - R6000",
+        image: "images/decor_blue.png",
+        keywords: "kiddies decor party packages birthdays themed"
+    },
+];
+
+// Function to render the services to the page
+function renderServices(searchTerm = "") {
+    const grid = $('#dynamic-service-grid');
+    if (grid.length === 0) return; // Stop if we aren't on the services page
+
+    grid.empty(); // Clear the grid
+    let matchCount = 0;
+
+    // Convert search term to lowercase for easy matching
+    const searchLower = searchTerm.toLowerCase();
+
+    // Loop through the data
+    serviceData.forEach(service => {
+        // Check if the search term matches the title, description, or keywords
+        const matchesTitle = service.title.toLowerCase().includes(searchLower);
+        const matchesDesc = service.description.toLowerCase().includes(searchLower);
+        const matchesKeywords = service.keywords.toLowerCase().includes(searchLower);
+
+        if (matchesTitle || matchesDesc || matchesKeywords) {
+            matchCount++;
+            
+            // Build the HTML for this service card
+            const cardHTML = `
+                <div class="service-card scroll-reveal active">
+                    <!-- Note: class="gallery-img" enables the lightbox -->
+                    <img src="${service.image}" alt="${service.title}" class="gallery-img">
+                    <div class="card-content">
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                        <p class="price">${service.price}</p>
+                    </div>
+                </div>
+            `;
+            grid.append(cardHTML);
+        }
+    });
+
+    // Show or hide the "No results" message
+    if (matchCount === 0) {
+        $('#no-services-msg').fadeIn(300);
+    } else {
+        $('#no-services-msg').fadeOut(200);
+    }
+}
+
+// Initializes the services grid on page load 
+if ($('#dynamic-service-grid').length > 0) {
+    renderServices(); // Renders everything initially
+
+    // Listen for typing in the search bar
+    $('#service-search').on('input', function() {
+        const searchValue = $(this).val(); // Get what the user typed
+        renderServices(searchValue);
+    });
+}
+
     /* Advanded DOM: Filter Buttons */
 //  Define data in a JS array
 const productData = [
