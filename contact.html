@@ -8,9 +8,12 @@
 =Poppins:wght@300;400;600&display = swap"
 rel = "stylesheet">
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet"href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!--Doodle animation-->
+    <div class="doodle-bg"></div>
 
     <header>
     <h1>Boledi's cakes & decor</h1>
@@ -21,7 +24,7 @@ rel = "stylesheet">
                 <li><a href="products.html">Products</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="orderonline.html">Order Online</a></li>
-                <li><a href="specialsandpromotions.html">Specials & Promoyions</a></li>
+                <li><a href="specialsandpromotions.html">Specials & Promotions</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -44,6 +47,9 @@ rel = "stylesheet">
             <li>Gamarishane</li>
             <li>Mogorawne</li>
         </ul>
+        <!--Inserts a map of the business location-->
+        <div id="map"></div>
+        
         </section>
 
         <section>
@@ -68,5 +74,9 @@ rel = "stylesheet">
     <footer>
         <h2>Thank you for choosing us</h2>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Linking javascript -->
+ <script src="script.js"></script>
     </body>
     </html>

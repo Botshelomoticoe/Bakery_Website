@@ -10,7 +10,8 @@ rel = "stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<!--Doodle animation-->
+    <div class="doodle-bg"></div>
     <header>
         <h1>Boledi's cakes & decor</h1>
         <nav>
@@ -29,6 +30,25 @@ rel = "stylesheet">
 
     <main>
         <h2>Our Products</h2>
+        <!--filter buttons-->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="cake">Cakes</button>
+        <button class="filter-btn" data-filter="pastry">Pastries</button>
+    </div>
+
+    <!-- JS will inject the products here -->
+    <div id="dynamic-product-grid" class="image row"></div>
+
+    <p style="text-align: center; margin-top: 2rem;"><a href="order.html" class="btn">Order Online</a></p>
+</main>
+
+<!-- LIGHTBOX HTML (Add this right before the closing </body> tag) -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Large View">
+</div>
+        </div>
 
         <!-- One section per product category from the sitemap -->
         <section>
@@ -67,6 +87,7 @@ rel = "stylesheet">
         <h2>Place your order today!</h2>
         <p><a href="contact.html">Contact Us</a></p>
     </footer>
-
+<!--Linking javascript -->
+ <script src="script.js"></script>
 </body>
 </html>
