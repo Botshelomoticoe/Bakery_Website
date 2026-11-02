@@ -88,22 +88,26 @@ const serviceData = [
     {
         title: "Wedding & Event Catering",
         description: "Full catering services for weddings, birthdays, and corporate events. Includes main meals, sides, and desserts.",
-        price: "Prices range from R500 - R5000",
-        image: "images/catering.png",
+        price: "Prices range from R300 - R5000",
+        image: "images/wedding-event-catering.png", 
+        alt: "Professional catering setup for a wedding event",
         keywords: "catering food event wedding catering services"
     },
     {
         title: "Event Decor & Styling",
         description: "Beautiful decor setups including balloon arches, table styling, draping, and custom centerpieces.",
-        price: "Prices range from R2000 - R10000",
-        image: "images/blue_decor.png", 
+        price: "Prices range from R2000 - R5000",
+        image: "images/event-decor-balloon-arch.png",
+        alt: "Beautiful event decor setup with balloon arches and table styling",
         keywords: "decor decorations event styling balloons setup"
     },
+
     {
         title: "Kiddies decor & party packages",
         description: "Fun and colorful party packages for children's birthdays, including themed decor, tableware, and activities.",
         price: "Prices range from R2000 - R6000",
         image: "images/decor_blue.png",
+        alt: "Colorful kiddies decor for birthday parties",
         keywords: "kiddies decor party packages birthdays themed"
     },
 ];
