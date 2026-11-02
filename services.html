@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial -scale=1.0">
-<title>Boledi's Cakes & decor - Services</title>
-<link  href="https://fonts.googleapis.com/css2?family=Playfair + Display:wght@700&family
-=Poppins:wght@300;400;600&display = swap"
-rel = "stylesheet">
-<!--Links this page to the shared stylesheet-->
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boledi's Cakes & Decor - Services</title>
+    
+    <!-- Font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!--Font Awesome so the search icon shows up -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Links this page to the shared stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--Doodle animation-->
+    <!-- Doodle animation -->
     <div class="doodle-bg"></div>
 
-<!--header appears at the top of every page-->
-<header>
-<h1> Boledi's cakes & decor</h1>
-<!--nav bar-same links repeated on every web page for consistent navigation-->
-
+    <!-- header appears at the top of every page -->
+    <header>
+        <h1>Boledi's Cakes & Decor</h1>
         <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="orderonline.html">Order Online</a></li>
-            <li><a href="specialsandpromotions.html">Special & Promotions</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="contact.html">Contact</a></li>
-           </ul>
-         </nav>
-        </header>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="orderonline.html">Order Online</a></li>
+                <li><a href="specialsandpromotions.html">Specials & Promotions</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-            <h2> Our Services</h2>
+    <main>
+        <h2>Our Services</h2>
 
-            <!-- SEARCH BAR CONTAINER -->
-    <div class="search-container">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" id="service-search" placeholder="Search services (e.g., 'catering', 'decor')...">
-    </div>
+        <!-- SEARCH BAR CONTAINER -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="service-search" placeholder="Search services (e.g., 'catering', 'decor')...">
+        </div>
 
-    <!-- JS will dynamically load content here -->
-    <div id="dynamic-service-grid" class="service-grid"></div>
+        <!-- JS will dynamically load content here -->
+        <div id="dynamic-service-grid" class="service-grid"></div>
 
-    <!-- No results message -->
-    <p id="no-services-msg" style="display: none; text-align: center; font-weight: bold; color: var(--shocking-orange);">
-        No services found matching your search.
-    </p>
-</main>
-        </html>
+        <!-- No results message -->
+        <p id="no-services-msg" style="display: none; text-align: center; font-weight: bold; color: var(--shocking-orange);">
+            No services found matching your search.
+        </p>
+    </main>
+
+    <!-- Footer appears at the bottom of every page -->
+    <footer>
+        <h2>Place your order today!</h2>
+        <p><a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!--jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!--linking javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

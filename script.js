@@ -167,14 +167,14 @@ if ($('#dynamic-service-grid').length > 0) {
     /* Advanded DOM: Filter Buttons */
 //  Define data in a JS array
 const productData = [
-    {id:1,name:"Classic Wedding Cake",category: "cake", img: "images/orangeflower_weddingcake.png"},
+    {id:1,name:"three tier Wedding Cake",category: "cake", img: "images/orangeflower_weddingcake.png"},
     {id:2,name:"Birthday Cake",category: "cake", img: "images/hunnamontena_cake.png"},
-    {id:3,name:"Bridal Cake",category: "cake", img: "images/braidal_shower.png"},
-    {id:4,name:"wedding Cake",category: "cake", img: "images/wedding_cake.png"},
+    {id:3,name:"Bridal shower Cake",category: "cake", img: "images/braidal_shower.png"},
+    {id:4,name:"Traditional Wedding Cake",category: "cake", img: "images/wedding_cake.png"},
     {id:5,name:"Bento Cake",category: "cake", img: "images/bento_cake.png"},
-    {id:6,name:"Wedding Cake",category:"cake",img:"images/minimalistic_weddingcake.png"},
+    {id:6,name:"White Wedding Cake",category:"cake",img:"images/minimalistic_weddingcake.png"},
     {id:7,name:"Biscuits",category:"Sweet Pastery",img:"images/biscuits.png"},
-    {id:8,name:"Platters",category:"Platters",img:"images/platters.png"},
+    {id:8,name:"Platters",category:"Platters",img:"images/platters.png"}
 ];
 
 // 2. Function to render products dynamically

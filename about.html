@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial -scale=1.0">
 <title>Boledi's Cakes & decor - Aboout us</title>
-<link  href="https://fonts.googleapis.com/css2?family=Playfair + Display:wght@700&family
-=Poppins:wght@300;400;600&display = swap"
-rel = "stylesheet">
-<!--Links this page to the shared stylesheet-->
+<link  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family
+=Poppins:wght@300;400;600&display = swap" rel = "stylesheet">
+<!-- Added Font Awesome for the accordion icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--Links this page to the shared stylesheet-->
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -43,7 +45,7 @@ rel = "stylesheet">
                 <img src="images/pink_weddingcake.png" alt="Boledi's Cakes & Decor">
                 <img src="images/bentocake.png" alt="Boledi's Cakes & Decor">
                 <img src="images/whiteflower_weddingcake.png" alt="Boledi's Cakes & Decor">
-                <img src="images/minimalistic_cake (2).png" alt="Boledi's Cake & Decor"
+                <img src="images/minimalistic_cake (2).png" alt="Boledi's Cake & Decor">
             </div>
         </section>
 
@@ -82,25 +84,32 @@ rel = "stylesheet">
         <!--Accordion-->
         <div class="accordion-wrapper">
             <h2>Frequently Asked Questions</h2>
+
+            <!--1st Question-->
             <div class="accordion-item">
                 <button class="accordion-header">How many notice days are required to place an order?<i class="fas fa-plus"></i></button>
                 <div class="accordion-content">
                     <p>We require at least 48 hours/2 days notice for cake orders and 24 hours/1 day for catering and decor services.</p>
                 </div>
             </div>
-
+  
+            <!--2nd Question-->
             <div class="accordion-item">
                 <button class="accordion-header">How long does a cake last?<i class="fas fa-plus"></i></button>
                 <div class="accordion-content">
                     <p>The shelf life of our cake depends on it's type and storage conditions.Our popular flavour cakes can last for up to 5 days when
                     stored in the refrigerator.</p>
                 </div>
+            </div>
 
-                <div class="accordion-item">
+            <!--3rd Question-->
+            <div class="accordion-item">
                 <button class="accordion-header">Do you offer delivery services?<i class="fas fa-plus"></i></button>
                 <div class="accordion-content">
                     <p>Yes, we offer free delivery services for areas around Sekukune.</p>
                 </div>
+            </div>
+        </div>
 
         <section>
             <h3>The Founder</h3>
@@ -115,7 +124,11 @@ rel = "stylesheet">
             <h2>Place your order today!</h2>
             <p><a href="contact.html">Contact Us</a></p>
         </footer>
-<!--Linking javascript -->
- <script src="script.js"></script>
-        </body>
-        </html>
+
+        <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- linking javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
