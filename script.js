@@ -298,8 +298,8 @@ $('#contact-form').on('submit', function(e) {
             btn.text('Send Message').prop('disabled', false);
             
             // Show success message (simulating email compilation)
-            $('#contact-success-msg').html('<strong>Message Sent Successfully!</strong><br>Thank you ${name}. An email has been compiled and sent to Boledi's Cakes & Decor').fadeIn();
-        },
+            $('#contact-success-msg').html(`<strong>Message Sent Successfully!</strong><br>Thank you ${name}. An email has been compiled and sent to Boledi's Cakes & Decor`).fadeIn();
+},
         error: function() {
             btn.text('Send Message').prop('disabled', false);
             $('#contact-error-msg').html("An error occurred. Please try again later.").fadeIn();
