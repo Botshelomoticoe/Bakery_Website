@@ -792,3 +792,35 @@ footer a:hover {
     text-align: left;
     margin-bottom: 0;
 }
+
+/*Form validation and response styles*/
+.error-box {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 2px solid #ef9a9a;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.success-box {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 2px solid #a5d6a7;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Style for inputs when they are invalid */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #ef9a9a;
+}

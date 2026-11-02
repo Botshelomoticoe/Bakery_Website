@@ -194,10 +194,10 @@ function renderProducts(filter) {
         if (filter === 'all' || product.category === filter) {
             // Using Template Literals to inject variables dynamically
             const productHTML = `
-                <div class="product-card scroll-reveal active" style="margin-bottom: 2rem;">
-                    <img src="${product.img}" alt="${product.name}" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover;">
-                    <h3 style="margin-top: 1rem; font-size: 1.2rem;">${product.name}</h3>
-                </div>
+        <div class="product-card scroll-reveal active" style="margin-bottom: 2rem;">
+        <img src="${product.img}" alt="${product.name}" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover;">
+        <h3 style="margin-top: 1rem; font-size: 1.2rem;">${product.name}</h3>
+        </div>
             `;
             grid.append(productHTML); // Inject into DOM
         }
@@ -248,4 +248,131 @@ $('#lightbox').click(function(e) {
     }
 });
 
+});
+
+/*Form validation and AJAX submission*/
+
+/*---CONTACT PAGE FORM (General Message)*/
+$('#contact-form').on('submit', function(e) {
+    e.preventDefault(); // Stop normal form submission
+    
+    // Get values
+    const name = $('#c-name').val().trim();
+    const email = $('#c-email').val().trim();
+    const type = $('#c-type').val();
+    const message = $('#c-message').val().trim();
+    
+    // Hide previous messages
+    $('#contact-error-msg').hide().empty();
+    $('#contact-success-msg').hide().empty();
+    
+    let errors = [];
+
+    // Client side Validation
+    if (name.length < 3) errors.push("Please enter a valid full name (at least 3 characters).");
+    if (!email.includes('@') || !email.includes('.')) errors.push("Please enter a valid email address.");
+    if (type === "") errors.push("Please select the type of message.");
+    if (message.length < 10) errors.push("Your message must be at least 10 characters long.");
+
+    // Error Handling
+    if (errors.length > 0) {
+        let errorHTML = "<ul>";
+        errors.forEach(err => errorHTML += <li>${err}</li>);
+        errorHTML += "</ul>";
+        $('#contact-error-msg').html(errorHTML).fadeIn();
+        return; // Stop submission
+    }
+
+    // AJAX Submission (Simulated)
+    const btn = $('#contact-submit-btn');
+    btn.text('Sending...').prop('disabled', true); // Show loading state
+
+    // Simulate AJAX Request (There is no real backend)
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts', // Mock endpoint
+        type: 'POST',
+        data: { name, email, type, message },
+        success: function(response) {
+            // Clear form
+            $('#contact-form')[0].reset();
+            btn.text('Send Message').prop('disabled', false);
+            
+            // Show success message (simulating email compilation)
+            $('#contact-success-msg').html('<strong>Message Sent Successfully!</strong><br>Thank you ${name}. An email has been compiled and sent to Boledi's Cakes & Decor').fadeIn();
+        },
+        error: function() {
+            btn.text('Send Message').prop('disabled', false);
+            $('#contact-error-msg').html("An error occurred. Please try again later.").fadeIn();
+        }
+    });
+});
+
+
+/*Enquiry Form Validation and Dynamic Response*/
+$('#enquiry-form').on('submit', function(e) {
+    e.preventDefault();
+    
+    const name = $('#name').val().trim();
+    const email = $('#email').val().trim();
+    const subject = $('#subject').val();
+    const comments = $('#comments').val().trim();
+
+    $('#enquiry-error-msg').hide().empty();
+    $('#enquiry-response-msg').hide().empty();
+
+    let errors = [];
+
+    if (name === "") errors.push("Full name is required.");
+    if (!email.includes('@')) errors.push("Valid email is required.");
+    if (subject === "") errors.push("Please select an enquiry type.");
+    if (comments.length < 10) errors.push("Please provide more details in the comments.");
+
+    if (errors.length > 0) {
+        let errorHTML = "<ul>";
+        errors.forEach(err => errorHTML += <li>${err}</li>);
+        errorHTML += "</ul>";
+        $('#enquiry-error-msg').html(errorHTML).fadeIn();
+        return;
+    }
+
+    const btn = $('#enquiry-submit-btn');
+    btn.text('Processing...').prop('disabled', true);
+
+    // AJAX Submission (Simulated)
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts', 
+        type: 'POST',
+        data: { name, email, subject, comments },
+        success: function(response) {
+            $('#enquiry-form')[0].reset();
+            btn.text('Send Enquiry').prop('disabled', false);
+
+            // Dynamic response based on enquiry type
+            let costEstimate = "";
+            let availability = "";
+
+            if (subject === 'cake') {
+                costEstimate = "R500 - R6000 (depending on tiers and design)";
+                availability = "We currently have availability for the next weekend.";
+            } else if (subject === 'catering') {
+                costEstimate = "R300 - R5000 (depending on guest count)";
+                availability = "We require at least 2 weeks notice for catering.";
+            } else if (subject === 'decor') {
+                costEstimate = "R2000 - R5000 (depending on setup complexity)";
+                availability = "Please book at least 1 month in advance for event decor.";
+            }
+
+            // Present the response
+            const responseHTML = `
+                <strong>Thank you, ${name}! Your enquiry has been received.</strong><br><br>
+                <b>Estimated Cost:</b> ${costEstimate}<br>
+                <b>Availability:</b> ${availability}<br><br>
+                <small>We will email you at ${email} to confirm details.</small>
+            `; $('#enquiry-response-msg').html(responseHTML).fadeIn();
+        },
+        error: function() {
+            btn.text('Send Enquiry').prop('disabled', false);
+            $('#enquiry-error-msg').html("An error occurred. Please try again.").fadeIn();
+        }
+    });
 });
