@@ -125,8 +125,51 @@ Forms: Fields accept appropriate input and validation works where implemented. T
 Ordering: The ordering interface behaves as intended.| To be completed
 Contact information: Displayed details are correct and up to date. Completed
 
+Website Changelog: Boledi's Cakes & Decor
+
+Foundation & Core Structure
+
+· HTML Fixes: Corrected invalid <image> tags to standard <img> tags across all pages, resolving broken image displays. Fixed various nesting and typo issues in forms and accordions.
+
+· Styling: Implemented a bright, cohesive bakery theme using CSS variables bubblegum pink, sunburst orange, clean white. Added responsive design, custom typography (Playfair Display & Poppins), and soft shadows to match the brand's aesthetic.
+
+· Navigation & Footer: Created a unified navigation bar and footer across all pages for consistent user experience.
+
+· Image Framing: Applied a uniform 5px pink border, rounded corners, and hover effects to all images.
+
+Interactivity & User Experience
+
+· Accordions: Integrated jQuery slideToggle for smooth, animated FAQ and information sections on the About page.
+
+· Carousel: Added a fully functional, auto-playing image slider on the Order Online page using jQuery to showcase cake designs.
+
+· Scroll Animations: Implemented jQuery-based scroll-triggered animations to fade in and slide up content sections as the user scrolls.
+
+· Dynamic Content: Built a JavaScript driven product and service grid, replacing static HTML with dynamically generated content for easier maintenance.
+
+Advanced Forms & Mapping
+
+· Form Validation & AJAX: Added client side validation using HTML attributes and custom JavaScript (RegEx) for email and phone fields. Implemented AJAX submission using event.
+
+· Interactive Map: Integrated Leaflet, to display three business locations (Jane Furse, GaMarishane, and Mogorwane) with custom markers, popups, and automatic map zoom-to-fit.
+
+· Customization Field: Replaced the dropdown menu in the order form with a <textarea> for detailed customer specifications.
+
+SEO & Documentation
+
+· SEO Implementation: Added unique <title>, <meta name="description">, and <meta name="keywords"> tags to every page. Optimized image file names and alt text for better search engine visibility.
 
 
-  Reference list
+
+
+Reference list
+
 Markin, I., 2025. Defining Website Goals and objectives.gapsy,[blog] 22 May. Available at < https://gapsystudio.com/blog/defining-website-goals-and-objectives/ > [Accessed 20 October 2026].
+
 Jamal | Website Strategy, 2025. 5 Must have website features for small businesses.[video online] Available at: < https://www.youtube.com/watch?v=miLZ76HMMc0 > [Accessed 20 october 2026]
+
+
+jQuery (n.d.) slideToggle() – jQuery API Documentation. Available at: https://api.jquery.com/slideToggle/ [Accessed: 2 November 2026]
+
+Leaflet (n.d.) Leaflet Quick Start Guide. Available at: https://leafletjs.com/examples/quick-start/ [Accessed: 2 November 2026]
+

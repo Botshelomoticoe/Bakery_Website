@@ -67,18 +67,18 @@ rel = "stylesheet">
 
         </section>
 
-        <!--This section is for customers to customise their order through the selection of various options-->
-        <!--add a text input field for customers to enter their customisation details-->
-        <section>
-            <h3>Customise Order</h3>
-            <label for="customisation">Customise your order to your liking:</label><br>
-            <select id="customisation" name="customisation">
-                <option value="flavour">Flavour</option>
-                <option value="size">Size</option>
-                <option value="design">Design</option>
-                <option value="colour">Colour</option>
-            </select><br><br>
-        </section>
+        <!-- This section is for customers to customise their order -->
+<section>
+    <h3>Customise Order</h3>
+    <label for="customisation">Customise your order to your liking:</label><br>
+    
+    <!-- Replaced the select dropdown with a textarea for full specifications -->
+    <textarea id="customisation" name="customisation" rows="5" 
+              placeholder="Please state all your specifications here. For example: Flavour (Vanilla), Size (2 Tiers), Design (Floral), Colour (Pastel Pink)..." 
+              required></textarea>
+    <br><br>
+</section>
+        
 
         <section>
             <h3>Add to Cart</h3> <!--make this a button-->

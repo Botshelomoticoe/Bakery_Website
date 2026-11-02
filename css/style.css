@@ -385,7 +385,7 @@ footer a:hover {
 .carousel-btn.next { right: 15px; }
 
 
-/* --- accordion --- */
+/* accordion  */
 .accordion-wrapper {
     max-width: 800px;
     margin: 2rem auto;
@@ -432,12 +432,9 @@ footer a:hover {
 .accordion-header.active i {
     transform: rotate(45deg); /* Turns the plus into an X */
 }
-
 .accordion-content {
+    display: none; /* Hidden by default */
     padding: 0 1.2rem;
-    max-height: 0; /* Hidden by default */
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
     background-color: white;
 }
 

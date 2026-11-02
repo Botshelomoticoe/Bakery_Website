@@ -72,11 +72,23 @@ $(document).ready(function() {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Add a marker for the bakery
-        let marker = L.marker([-24.9145, 29.7345]).addTo(map);
+        // Marker for Jane Furse / Hospital
+        let markerJaneFurse = L.marker([-24.9145, 29.7345]).addTo(map);
+        markerJaneFurse.bindPopup("<b>Boledi's Cakes & Decor</b><br>Jane Furse, Hospital Area.");
 
-        // Add a popup that opens when you click the marker
-        marker.bindPopup("<b>Boledi's Cakes & Decor</b><br>Jane Furse, Hospital Area.<br>Come taste the sweetness!").openPopup();
+        // Marker for GaMarishane (Gamarishane) 
+        // Coordinates approx: -24.72703, 29.74898
+        let markerGamarishane = L.marker([-24.72703, 29.74898]).addTo(map);
+        markerGamarishane.bindPopup("<b>Boledi's Cakes & Decor</b><br>GaMarishane Branch.");
+
+        //Marker for Mogorwane (Mororwane)
+        let markerMororwane = L.marker([-24.47756, 29.72500]).addTo(map);
+        markerMororwane.bindPopup("<b>Boledi's Cakes & Decor</b><br>Mogorwane Branch.");
+
+        // Automatically zoom to fit all markers
+        // This groups all markers and adjusts the map view so all are visible
+        let group = new L.featureGroup([markerJaneFurse, markerGamarishane, markerMororwane]);
+        map.fitBounds(group.getBounds().pad(0.1)); 
     }
 
     /* Dynamic service and live search */
@@ -169,13 +181,13 @@ if ($('#dynamic-service-grid').length > 0) {
     /* Advanded DOM: Filter Buttons */
 //  Define data in a JS array
 const productData = [
-    {id:1,name:"three tier Wedding Cake",category: "cake", img: "images/orangeflower_weddingcake.png"},
+    {id:1,name:"Three tier Wedding Cake",category: "cake", img: "images/orangeflower_weddingcake.png"},
     {id:2,name:"Birthday Cake",category: "cake", img: "images/hunnamontena_cake.png"},
-    {id:3,name:"Bridal shower Cake",category: "cake", img: "images/braidal_shower.png"},
+    {id:3,name:"Bridal shower Cake",category: "cake", img: "images/boledi_bridalcake.png"},
     {id:4,name:"Traditional Wedding Cake",category: "cake", img: "images/wedding_cake.png"},
-    {id:5,name:"Bento Cake",category: "cake", img: "images/bento_cake.png"},
+    {id:5,name:"Bento Cake",category: "cake", img: "images/bentocake_janefurse.png"},
     {id:6,name:"White Wedding Cake",category:"cake",img:"images/minimalistic_weddingcake.png"},
-    {id:7,name:"Biscuits",category:"Sweet Pastery",img:"images/biscuits.png"},
+    {id:7,name:"Biscuits",category:"Sweet Pastery",img:"images/boledis_biscuits.png"},
     {id:8,name:"Platters",category:"Platters",img:"images/platters.png"}
 ];
 
