@@ -1,8 +1,6 @@
 // Wait for the HTML document to fully load before running scripts
 $(document).ready(function() {
 
-    
-
     /* Animations */
     $('section, .image.row img, .card').addClass('scroll-reveal');
 
@@ -277,7 +275,8 @@ $('#contact-form').on('submit', function(e) {
     // Error Handling
     if (errors.length > 0) {
         let errorHTML = "<ul>";
-        errors.forEach(err => errorHTML += <li>${err}</li>);
+        errors.forEach(err => { errorHTML += `<li>${err}</li>`;
+        });
         errorHTML += "</ul>";
         $('#contact-error-msg').html(errorHTML).fadeIn();
         return; // Stop submission
@@ -307,47 +306,78 @@ $('#contact-form').on('submit', function(e) {
     });
 });
 
-
-/*Enquiry Form Validation and Dynamic Response*/
+/*Enquiry Form (Cost & Availability)*/
 $('#enquiry-form').on('submit', function(e) {
-    e.preventDefault();
     
+    e.preventDefault(); // Stops the browser from reloading or changing pages
+    
+    // 2. Get values
     const name = $('#name').val().trim();
     const email = $('#email').val().trim();
+    const phone = $('#phone').val().trim();
     const subject = $('#subject').val();
     const comments = $('#comments').val().trim();
 
+    // Hide previous messages
     $('#enquiry-error-msg').hide().empty();
     $('#enquiry-response-msg').hide().empty();
 
     let errors = [];
 
-    if (name === "") errors.push("Full name is required.");
-    if (!email.includes('@')) errors.push("Valid email is required.");
-    if (subject === "") errors.push("Please select an enquiry type.");
-    if (comments.length < 10) errors.push("Please provide more details in the comments.");
-
-    if (errors.length > 0) {
-        let errorHTML = "<ul>";
-        errors.forEach(err => errorHTML += <li>${err}</li>);
-        errorHTML += "</ul>";
-        $('#enquiry-error-msg').html(errorHTML).fadeIn();
-        return;
+    // Validation Rules
+    if (name.length < 3) {
+        errors.push("Please enter a valid full name (at least 3 characters).");
     }
 
+    // Email Regex Validation (Checks for text@text.text)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errors.push("Please enter a valid email address (e.g., name@example.com).");
+    }
+
+    // Phone Regex Validation (Allows numbers, spaces, and +. Must be 10 digits)
+    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    if (!phoneRegex.test(phone)) {
+        errors.push("Please enter a valid phone number (e.g., 067 061 9964).");
+    }
+
+    if (subject === "") {
+        errors.push("Please select an enquiry type.");
+    }
+
+    if (comments.length < 10) {
+        errors.push("Please provide more details in the comments (at least 10 characters).");
+    }
+
+    // Display Errors if any exist
+    if (errors.length > 0) {
+        let errorHTML = "<ul>";
+        errors.forEach(err => errorHTML += `<li>${err}</li>`);
+        errorHTML += "</ul>";
+        $('#enquiry-error-msg').html(errorHTML).fadeIn();
+        
+        // Scroll to the error message so the user sees it
+        $('html, body').animate({
+            scrollTop: $("#enquiry-error-msg").offset().top - 100
+        }, 500);
+        
+        return; // STOP the script here. Do not submit.
+    }
+
+    // If validation passes, show loading state
     const btn = $('#enquiry-submit-btn');
     btn.text('Processing...').prop('disabled', true);
 
-    // AJAX Submission (Simulated)
+    // AJAX Submission
     $.ajax({
         url: 'https://jsonplaceholder.typicode.com/posts', 
         type: 'POST',
-        data: { name, email, subject, comments },
+        data: { name, email, phone, subject, comments },
         success: function(response) {
             $('#enquiry-form')[0].reset();
             btn.text('Send Enquiry').prop('disabled', false);
 
-            // Dynamic response based on enquiry type
+            // Dynamic Response based on subject
             let costEstimate = "";
             let availability = "";
 
@@ -362,17 +392,23 @@ $('#enquiry-form').on('submit', function(e) {
                 availability = "Please book at least 1 month in advance for event decor.";
             }
 
-            // Present the response
             const responseHTML = `
                 <strong>Thank you, ${name}! Your enquiry has been received.</strong><br><br>
                 <b>Estimated Cost:</b> ${costEstimate}<br>
                 <b>Availability:</b> ${availability}<br><br>
                 <small>We will email you at ${email} to confirm details.</small>
-            `; $('#enquiry-response-msg').html(responseHTML).fadeIn();
+            `;
+            
+            $('#enquiry-response-msg').html(responseHTML).fadeIn();
+            
+            // Scroll to the success message
+            $('html, body').animate({
+                scrollTop: $("#enquiry-response-msg").offset().top - 100
+            }, 500);
         },
         error: function() {
             btn.text('Send Enquiry').prop('disabled', false);
-            $('#enquiry-error-msg').html("An error occurred. Please try again.").fadeIn();
+            $('#enquiry-error-msg').html("An error occurred during submission. Please try again.").fadeIn();
         }
     });
 });
